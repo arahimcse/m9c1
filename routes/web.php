@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hi', function () {
+    return 'this is first text';
+})->middleware('throttle:2,1');
+
+Route::get('/hello', function () {
+    return "Hi! ";
+})->middleware("simple");
